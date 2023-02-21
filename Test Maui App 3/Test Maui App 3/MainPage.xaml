@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test_Maui_App_3.MainPage">
+
+    <ScrollView>
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="20,5,20,5" />
+                                    <On Platform="Android" Value="16,1,16,1" />
+                                </OnPlatform>
+                            </Grid.Margin>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                              </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="Unit" VerticalOptions="CenterAndExpand"/>
+                            <Picker Grid.Column="1" Title="Select a thing." >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>One thing.</x:String>
+                                        <x:String>Another Thing.</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+                
+            </TableRoot>
+        </TableView>
+    </ScrollView>
+
+</ContentPage>
+
